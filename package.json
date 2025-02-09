@@ -1,0 +1,29 @@
+{
+  "name": "cncode-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.47.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "md5": "^2.3.0",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.0",
+    "mongoose-slug-generator": "^1.0.4",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.9",
+    "slugify": "^1.6.6",
+    "socket.io": "^4.8.1"
+  }
+}
