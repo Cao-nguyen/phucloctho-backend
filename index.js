@@ -19,7 +19,7 @@ db.connect();
 app.use(
   cors({
     origin: [
-      "https://cncode.vercel.app", // Frontend URL
+      "https://phucloctho.vercel.app", // Frontend URL
       "http://localhost:3000", // Localhost khi phát triển
     ],
   })
