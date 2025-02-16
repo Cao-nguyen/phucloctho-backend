@@ -8,6 +8,10 @@ const adminRoutes = (app) => {
   router.patch("/api/v1/bins/news/patch", AdminControllers.patchNewsFunc);
   router.get("/api/v1/bins/news", AdminControllers.showNewsFunc);
 
+  router.post("/api/v1/products/post", AdminControllers.productPost);
+  router.get("/api/v1/products/get", AdminControllers.productGet);
+  router.patch("/api/v1/products/delete", AdminControllers.productDelete);
+
   router.patch("/api/v1/footer", AdminControllers.footer);
   router.get("/api/v1/footerShow", AdminControllers.footerShow);
 
