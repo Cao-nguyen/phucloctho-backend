@@ -4,6 +4,10 @@ const AdminControllers = require("../controllers/AdminControllers");
 const router = express.Router();
 
 const adminRoutes = (app) => {
+  router.post("/api/v1/blog/post", AdminControllers.blogPost);
+  router.get("/api/v1/blog/get", AdminControllers.blogGet);
+  router.post("/api/v1/blog/delete", AdminControllers.blogDelete);
+
   router.post("/api/v1/bins/news/delete", AdminControllers.deleteNewsFunc);
   router.patch("/api/v1/bins/news/patch", AdminControllers.patchNewsFunc);
   router.get("/api/v1/bins/news", AdminControllers.showNewsFunc);

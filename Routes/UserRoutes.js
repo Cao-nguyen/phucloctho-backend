@@ -5,6 +5,7 @@ const router = express.Router();
 
 const userRoutes = (app) => {
   router.get("/api/v1/productGet", RegisterLoginControllers.ProductGet);
+  router.get("/api/v1/blogGet", RegisterLoginControllers.blogGet);
 
   router.post("/api/v1/dangky", RegisterLoginControllers.RegisterUser);
   router.post("/api/v1/dangnhap", RegisterLoginControllers.LoginUser);

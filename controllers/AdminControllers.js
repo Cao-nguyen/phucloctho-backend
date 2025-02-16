@@ -1,5 +1,5 @@
 const InforModel = require("../models/InforModel");
-const News = require("../models/NewsModel");
+const Blog = require("../models/BlogModel");
 const Footer = require("../models/footerModel");
 const Products = require("../models/products");
 
@@ -216,6 +216,69 @@ const productDelete = async (req, res) => {
   }
 };
 
+const blogPost = async (req, res) => {
+  try {
+    const { name, content } = req.body;
+
+    const data = new Blog({
+      title: name,
+      content: content,
+    });
+
+    await data.save();
+
+    return res.json({
+      EM: "Đã tạo sản phẩm thành công!",
+      EC: 0,
+      DT: "",
+    });
+  } catch {
+    return res.json({
+      EM: "Thông tin chưa được cập nhật",
+      EC: -1,
+      DT: "",
+    });
+  }
+};
+
+const blogGet = async (req, res) => {
+  try {
+    const data = await Blog.find({});
+
+    return res.json({
+      EM: "Thành công!",
+      EC: 0,
+      DT: data,
+    });
+  } catch {
+    return res.json({
+      EM: "Thông tin chưa được cập nhật",
+      EC: -1,
+      DT: "",
+    });
+  }
+};
+
+const blogDelete = async (req, res) => {
+  try {
+    const { id } = req.body;
+
+    await Blog.deleteOne({ _id: id });
+
+    return res.json({
+      EM: "Đã xoá vĩnh viễn thành công!",
+      EC: 0,
+      DT: "",
+    });
+  } catch {
+    return res.json({
+      EM: "Đã có lỗi xảy ra",
+      EC: -1,
+      DT: "",
+    });
+  }
+};
+
 module.exports = {
   deleteNewsFunc,
   patchNewsFunc,
@@ -227,4 +290,7 @@ module.exports = {
   productPost,
   productGet,
   productDelete,
+  blogPost,
+  blogGet,
+  blogDelete,
 };

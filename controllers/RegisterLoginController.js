@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/UserModel");
 const Products = require("../models/products");
+const Blog = require("../models/BlogModel");
 
 const RegisterUser = async (req, res) => {
   const { fullName, email, username, password } = req.body;
@@ -128,9 +129,28 @@ const ProductGet = async (req, res) => {
   }
 };
 
+const blogGet = async (req, res) => {
+  try {
+    const data = await Blog.find({});
+
+    return res.json({
+      EM: "Thành công!",
+      EC: 0,
+      DT: data,
+    });
+  } catch {
+    return res.json({
+      EM: "Thông tin chưa được cập nhật",
+      EC: -1,
+      DT: "",
+    });
+  }
+};
+
 module.exports = {
   RegisterUser,
   LoginUser,
   Forgot,
   ProductGet,
+  blogGet,
 };

@@ -16,14 +16,7 @@ const port = process.env.PORT || 8080;
 db.connect();
 
 // Cho phép frontend từ localhost:3000
-app.use(
-  cors({
-    origin: [
-      "https://phucloctho.vercel.app", // Frontend URL
-      "http://localhost:3000", // Localhost khi phát triển
-    ],
-  })
-);
+app.use(cors({}));
 
 // Middleware để xử lý JSON requests
 app.use(express.json());
